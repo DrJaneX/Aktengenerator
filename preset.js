@@ -1,7 +1,6 @@
 // Vorlagen-Daten
 const vorlagen = {
     steckschuss: {
-        diagnose: "Steckschuss im rechten Oberschenkel",
         symptome: "Starke Blutung, Schmerzen, Schockzustand",
         massnahme: "Blutstillung durch Druckverband, Schmerzmittel verabreicht",
         untersuchung: "Röntgenaufnahme durchgeführt, Kugel lokalisiert",
@@ -10,7 +9,6 @@ const vorlagen = {
         besonderheiten: "Patient ist allergisch gegen Penicillin"
     },
     durchschuss: {
-        diagnose: "Steckschuss im rechten Oberschenkel",
         symptome: "Starke Blutung, Schmerzen, Schockzustand",
         massnahme: "Blutstillung durch Druckverband, Schmerzmittel verabreicht",
         untersuchung: "Röntgenaufnahme durchgeführt, Kugel lokalisiert",
@@ -38,25 +36,20 @@ function applyVorlage(vorlageKey) {
     Object.keys(vorlage).forEach(field => {
         const baustein = document.querySelector(`.baustein[data-field="${field}"]`);
         if (baustein) {
-            console.log(`Baustein "${field}" gefunden und wird angezeigt.`);
-            // Baustein sichtbar machen
             baustein.style.display = "block";
 
-            // Eingabefeld füllen
             const input = baustein.querySelector("input, textarea");
             if (input) {
                 input.value = vorlage[field];
             }
-
-            // Entfernen-Button sicherstellen
-            const removeButton = baustein.querySelector(".remove-baustein");
-            if (removeButton) {
-                removeButton.style.display = "inline-block"; // Sicherstellen, dass der Button sichtbar ist
-            }
-        } else {
-            console.warn(`Baustein mit data-field="${field}" nicht gefunden.`);
         }
     });
+
+    // Zeige die Auswahl für Seite und Körperteil immer an, wenn der Diagnose-Baustein sichtbar ist
+    const diagnoseBaustein = document.querySelector('.baustein[data-field="diagnose"]');
+    if (diagnoseBaustein) {
+        addLocationSelectors(); // Auswahl hinzufügen
+    }
 }
 
 // Event-Listener für die Vorlagen-Auswahl

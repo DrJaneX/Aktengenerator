@@ -222,3 +222,66 @@ document.getElementById("akte-form").addEventListener("submit", (e) => {
     preview.appendChild(copyButton);
 });
 
+function addLocationSelectors() {
+    const diagnoseBaustein = document.querySelector('.baustein[data-field="diagnose"]');
+    if (!diagnoseBaustein) return;
+
+    // Container für die zusätzlichen Auswahlmöglichkeiten
+    let locationWrapper = diagnoseBaustein.querySelector(".location-wrapper");
+    if (!locationWrapper) {
+        locationWrapper = document.createElement("div");
+        locationWrapper.classList.add("location-wrapper");
+        diagnoseBaustein.appendChild(locationWrapper);
+    }
+
+    // Rechts/Links Dropdown
+    const sideSelect = document.createElement("select");
+    sideSelect.classList.add("side-select");
+    sideSelect.innerHTML = `
+        <option value="" disabled selected>-- Seite wählen --</option>
+        <option value="rechts">Rechts</option>
+        <option value="links">Links</option>
+    `;
+
+    // Körperteil Dropdown
+    const bodyPartSelect = document.createElement("select");
+    bodyPartSelect.classList.add("body-part-select");
+    bodyPartSelect.innerHTML = `
+        <option value="" disabled selected>-- Körperteil wählen --</option>
+        <option value="Oberschenkel">Oberschenkel</option>
+        <option value="Bauch">Bauch</option>
+        <option value="Oberarm">Oberarm</option>
+        <option value="Unterarm">Unterarm</option>
+    `;
+
+    // Button zum Anwenden der Auswahl
+    const applyButton = document.createElement("button");
+    applyButton.type = "button";
+    applyButton.textContent = "Auswahl übernehmen";
+    applyButton.classList.add("apply-location");
+    applyButton.addEventListener("click", () => {
+        const side = sideSelect.value;
+        const bodyPart = bodyPartSelect.value;
+
+        if (side && bodyPart) {
+            const textarea = diagnoseBaustein.querySelector("textarea");
+            const currentText = textarea.value.trim();
+            const newText = `Steckschuss ${bodyPart} ${side}`; // Diagnose-Text anpassen
+            textarea.value = currentText ? `${currentText}, ${newText}` : newText;
+        } else {
+            alert("Bitte sowohl Seite als auch Körperteil auswählen.");
+        }
+    });
+
+    // Wrapper leeren und neue Elemente hinzufügen
+    locationWrapper.innerHTML = "";
+    locationWrapper.appendChild(sideSelect);
+    locationWrapper.appendChild(bodyPartSelect);
+    locationWrapper.appendChild(applyButton);
+
+    // Auswahl immer sichtbar machen
+    locationWrapper.style.display = "flex";
+}
+
+addLocationSelectors();
+

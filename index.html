@@ -86,6 +86,21 @@
                     <label>Besonderheiten: <button type="button" class="remove-baustein">✖</button></label>
                     <textarea name="besonderheiten"></textarea>
                 </div>
+                <div class="location-wrapper">
+                    <select class="side-select">
+                        <option value="" disabled selected>-- Seite wählen --</option>
+                        <option value="rechts">Rechts</option>
+                        <option value="links">Links</option>
+                    </select>
+                    <select class="body-part-select">
+                        <option value="" disabled selected>-- Körperteil wählen --</option>
+                        <option value="Oberschenkel">Oberschenkel</option>
+                        <option value="Bauch">Bauch</option>
+                        <option value="Oberarm">Oberarm</option>
+                        <option value="Unterarm">Unterarm</option>
+                    </select>
+                    <button type="button" class="apply-location">Auswahl übernehmen</button>
+                </div>
                 <button type="submit">Akte generieren</button>
             </form>
         </section>
