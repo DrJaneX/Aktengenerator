@@ -263,3 +263,22 @@ button[type="submit"]:hover {
     background-color: #1558b0; /* Dunkleres Blau */
     transform: translateY(-2px); /* Leichter Hover-Effekt */
 }
+
+#clear-all {
+    background-color: #dc3545; /* Rot */
+    color: #ffffff; /* Weißer Text */
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem; /* Abstand zum "Akte generieren"-Button */
+    display: block; /* Block-Layout für vertikale Platzierung */
+    width: 100%; /* Gleiche Breite wie "Akte generieren" */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#clear-all:hover {
+    background-color: #a71d2a; /* Dunkleres Rot */
+    transform: translateY(-2px); /* Leichter Hover-Effekt */
+}

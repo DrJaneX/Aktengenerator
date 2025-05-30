@@ -285,3 +285,23 @@ function addLocationSelectors() {
 
 addLocationSelectors();
 
+document.getElementById("clear-all").addEventListener("click", () => {
+    // Alle Textfelder leeren
+    document.querySelectorAll("textarea, input[type='text']").forEach(input => {
+        input.value = "";
+    });
+
+    // Alle Dropdowns zurücksetzen
+    document.querySelectorAll("select").forEach(select => {
+        select.selectedIndex = 0; // Setzt auf die erste Option zurück
+    });
+
+    // Optional: Vorschau leeren
+    const preview = document.getElementById("akte-preview");
+    if (preview) {
+        preview.innerHTML = "";
+    }
+
+    alert("Alle Felder wurden geleert!");
+});
+
