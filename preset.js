@@ -9,6 +9,15 @@ const vorlagen = {
         nachkontrolle: "Nachkontrolle in 7 Tagen empfohlen",
         besonderheiten: "Patient ist allergisch gegen Penicillin"
     },
+    durchschuss: {
+        diagnose: "Steckschuss im rechten Oberschenkel",
+        symptome: "Starke Blutung, Schmerzen, Schockzustand",
+        massnahme: "Blutstillung durch Druckverband, Schmerzmittel verabreicht",
+        untersuchung: "Röntgenaufnahme durchgeführt, Kugel lokalisiert",
+        mitgabe: "Schmerzmittel (Ibuprofen 400mg), Antibiotikum",
+        nachkontrolle: "Nachkontrolle in 7 Tagen empfohlen",
+        besonderheiten: "Patient ist allergisch gegen Penicillin"
+    },
     verstauchung: {
         diagnose: "Verstauchung des linken Handgelenks",
         symptome: "Schwellung, Schmerzen, eingeschränkte Beweglichkeit",
