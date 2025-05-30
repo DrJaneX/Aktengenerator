@@ -1,134 +1,158 @@
+:root {
+    /* Standardfarben (Hellmodus) */
+    --background-color: #f4f6f9;
+    --text-color: #333;
+    --card-background: #ffffff;
+    --button-background: #1a73e8;
+    --button-hover: #1558b0;
+    --border-color: #d1d5db;
+    --input-background: #f9fafb;
+    --input-text-color: #333;
+}
+
+.dark-mode {
+    /* Farben für den Darkmode */
+    --background-color: #1e1e2f;
+    --text-color: #e4e4e7;
+    --card-background: #2a2a3b;
+    --button-background: #3a4a6b;
+    --button-hover: #2e3a54;
+    --border-color: #3e3e4e;
+    --input-background: #2a2a3b;
+    --input-text-color: #e4e4e7;
+}
+
+/* Allgemeine Stile */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f6f9; /* Helles Grau für den Hintergrund */
-  margin: 0;
-  padding: 2rem;
-  color: #333; /* Dunkles Grau für den Text */
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 2rem;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1 {
-  text-align: center;
-  color: #1a1f36; /* Sehr dunkles Blau */
-  margin-bottom: 2rem;
+    text-align: center;
+    color: #1a1f36; /* Sehr dunkles Blau */
+    margin-bottom: 2rem;
 }
 
 .main-container {
-  display: flex;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+    display: flex;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.config-section {
-  flex: 1; /* Linke Spalte */
-  background-color: #ffffff; /* Weißer Hintergrund */
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sanfter Schatten */
+.config-section,
+.preview-section {
+    flex: 1;
+    background-color: var(--card-background);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sanfter Schatten */
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .preview-section {
-  flex: 1; /* Rechte Spalte */
-  background-color: #ffffff; /* Weißer Hintergrund */
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sanfter Schatten */
-  overflow-y: auto; /* Scrollbar, falls der Inhalt zu groß wird */
+    overflow-y: auto; /* Scrollbar, falls der Inhalt zu groß wird */
 }
 
 .preview-section h2 {
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  color: #1a1f36; /* Sehr dunkles Blau */
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #1a1f36; /* Sehr dunkles Blau */
 }
 
 #baustein-auswahl {
-  margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 #baustein-auswahl h2 {
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-  color: #4a4f63; /* Mittelgrau */
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: #4a4f63; /* Mittelgrau */
 }
 
 .baustein-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 .baustein-buttons button {
-  background-color: #3a4a6b; /* Dunkler Blauton */
-  color: #ffffff; /* Weißer Text */
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+    background-color: var(--button-background);
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .baustein-buttons button:hover {
-  background-color: #2e3a54; /* Noch dunklerer Blauton */
-  transform: translateY(-2px); /* Leichter Hover-Effekt */
+    background-color: var(--button-hover);
+    transform: translateY(-2px);
 }
 
 label {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-  color: #1a1f36; /* Sehr dunkles Blau */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #1a1f36; /* Sehr dunkles Blau */
 }
 
 input[type="text"],
 select,
 textarea {
-  width: 100%;
-  padding: 0.75rem;
-  margin-bottom: 1.5rem;
-  border: 1px solid #d1d5db; /* Hellgrauer Rand */
-  border-radius: 8px;
-  font-size: 1rem;
-  box-sizing: border-box;
-  background-color: #f9fafb; /* Sehr helles Grau */
-  color: #333; /* Dunkles Grau für den Text */
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
+    background-color: var(--input-background);
+    color: var(--input-text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 input[type="text"]:focus,
 select:focus,
 textarea:focus {
-  border-color: #1a73e8; /* Blau beim Fokus */
-  box-shadow: 0 0 4px rgba(26, 115, 232, 0.4); /* Sanfter blauer Schatten */
-  outline: none;
+    border-color: #1a73e8; /* Blau beim Fokus */
+    box-shadow: 0 0 4px rgba(26, 115, 232, 0.4); /* Sanfter blauer Schatten */
+    outline: none;
 }
 
 textarea {
-  resize: vertical;
-  min-height: 100px;
+    resize: vertical;
+    min-height: 100px;
 }
 
 button[type="submit"] {
-  display: block;
-  width: 100%;
-  background-color: #1a73e8; /* Blau */
-  color: #ffffff; /* Weißer Text */
-  padding: 1rem;
-  font-size: 1.1rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block;
+    width: 100%;
+    background-color: var(--button-background);
+    color: #ffffff;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button[type="submit"]:hover {
-  background-color: #1558b0; /* Dunkleres Blau */
-  transform: translateY(-2px); /* Leichter Hover-Effekt */
+    background-color: var(--button-hover);
+    transform: translateY(-2px);
 }
 
 .baustein {
@@ -143,8 +167,8 @@ button[type="submit"]:hover {
   
 .add-medikament,
 .apply-medikament {
-    background-color: #1a73e8; /* Blau */
-    color: #ffffff; /* Weißer Text */
+    background-color: var(--button-background);
+    color: #ffffff;
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 6px;
@@ -157,8 +181,8 @@ button[type="submit"]:hover {
 
 .add-medikament:hover,
 .apply-medikament:hover {
-    background-color: #1558b0; /* Dunkleres Blau */
-    transform: translateY(-2px); /* Leichter Hover-Effekt */
+    background-color: var(--button-hover);
+    transform: translateY(-2px);
 }
   
 .dropdown-wrapper {
@@ -170,11 +194,11 @@ button[type="submit"]:hover {
   
 .medikament-dropdown {
     padding: 0.5rem;
-    border: 1px solid #d1d5db;
+    border: 1px solid var(--border-color);
     border-radius: 6px;
     font-size: 1rem;
-    background-color: #f9fafb;
-    color: #333;
+    background-color: var(--input-background);
+    color: var(--input-text-color);
 }
   
 .remove-dropdown {
@@ -189,7 +213,7 @@ button[type="submit"]:hover {
   
 .remove-dropdown:hover {
     background: #a71d2a; /* Dunkleres Rot */
-    transform: translateY(-2px); /* Leichter Hover-Effekt */
+    transform: translateY(-2px);
 }
   
 .medikamentenliste {
@@ -200,8 +224,8 @@ button[type="submit"]:hover {
 }
 
 .copy-button {
-    background-color: #1a73e8; /* Blau */
-    color: #ffffff; /* Weißer Text */
+    background-color: var(--button-background);
+    color: #ffffff;
     border: none;
     padding: 0.75rem 1.5rem;
     border-radius: 6px;
@@ -212,8 +236,8 @@ button[type="submit"]:hover {
 }
 
 .copy-button:hover {
-    background-color: #1558b0; /* Dunkleres Blau */
-    transform: translateY(-2px); /* Leichter Hover-Effekt */
+    background-color: var(--button-hover);
+    transform: translateY(-2px);
 }
 
 .remove-baustein {
@@ -239,16 +263,16 @@ button[type="submit"]:hover {
 .side-select,
 .body-part-select {
     padding: 0.5rem;
-    border: 1px solid #d1d5db;
+    border: 1px solid var(--border-color);
     border-radius: 6px;
     font-size: 1rem;
-    background-color: #f9fafb;
-    color: #333;
+    background-color: var(--input-background);
+    color: var(--input-text-color);
 }
 
 .apply-location {
-    background-color: #1a73e8; /* Blau */
-    color: #ffffff; /* Weißer Text */
+    background-color: var(--button-background);
+    color: #ffffff;
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 6px;
@@ -260,8 +284,8 @@ button[type="submit"]:hover {
 }
 
 .apply-location:hover {
-    background-color: #1558b0; /* Dunkleres Blau */
-    transform: translateY(-2px); /* Leichter Hover-Effekt */
+    background-color: var(--button-hover);
+    transform: translateY(-2px);
 }
 
 #clear-all {
@@ -280,5 +304,5 @@ button[type="submit"]:hover {
 
 #clear-all:hover {
     background-color: #a71d2a; /* Dunkleres Rot */
-    transform: translateY(-2px); /* Leichter Hover-Effekt */
+    transform: translateY(-2px);
 }
