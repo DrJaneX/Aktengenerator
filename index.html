@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medic RP Aktengenerator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Medic RP Aktengenerator</h1>
+
+    <section>
+        <label for="vorlage-select">Vorlage wählen:</label>
+        <select id="vorlage-select">
+            <option value="">-- Keine Vorlage --</option>
+        </select>
+    </section>
+
+    <section id="baustein-auswahl">
+        <h2>Bausteine auswählen</h2>
+    </section>
+    <div class="main-container">
+        <!-- Linke Spalte: Konfiguration -->
+        <section class="config-section">
+            <h2>Konfiguration</h2>
+            <div id="baustein-auswahl">
+                <h2>Bausteine auswählen</h2>
+                <div class="baustein-buttons">
+                    <button type="button" data-target="diagnose">Diagnose ✚</button>
+                    <button type="button" data-target="symptome">Symptome ✚</button>
+                    <button type="button" data-target="massnahme">Maßnahme vor Ort ✚</button>
+                    <button type="button" data-target="untersuchung">Untersuchung im EMT/SSMC ✚</button>
+                    <button type="button" data-target="mitgabe">Mitgegebene Medikamente ✚</button>
+                    <button type="button" data-target="nachkontrolle">Nachkontrolle ✚</button>
+                    <button type="button" data-target="besonderheiten">Besonderheiten ✚</button>
+                </div>
+            </div>
+            <form id="akte-form">
+                <div class="baustein" data-field="patientName">
+                    <label>Name des Patienten:</label>
+                    <input type="text" name="patientName">
+                </div>
+                <div class="baustein" data-field="personal">
+                    <label>Behandelndes Personal: </label>
+                    <input type="text" name="personal">
+                </div>
+                <div class="baustein" data-field="diagnose">
+                    <label>Diagnose: <button type="button" class="remove-baustein">✖</button></label>
+                    <textarea name="diagnose"></textarea>
+                </div>
+                <div class="baustein" data-field="symptome">
+                    <label>Symptome: <button type="button" class="remove-baustein">✖</button></label>
+                    <textarea name="symptome"></textarea>
+                </div>
+                <div class="baustein" data-field="massnahme">
+                    <label>Maßnahme vor Ort: <button type="button" class="remove-baustein">✖</button></label>
+                    <div class="medikamentenliste">
+                        <button type="button" class="add-medikament">+ Medikament</button>
+                        <button type="button" class="apply-medikament">Medikament übernehmen</button>
+                    </div>
+                    <textarea name="massnahme"></textarea>
+                </div>
+                <div class="baustein" data-field="untersuchung">
+                    <label>Untersuchung im EMT/SSMC: <button type="button" class="remove-baustein">✖</button></label>
+                    <div class="medikamentenliste">
+                        <button type="button" class="add-medikament">+ Medikament</button>
+                        <button type="button" class="apply-medikament">Medikament übernehmen</button>
+                    </div>
+                    <textarea name="untersuchung"></textarea>
+                </div>
+                <div class="baustein" data-field="mitgabe">
+                    <label>Mitgegebene Medikamente: <button type="button" class="remove-baustein">✖</button></label>
+                    <div class="medikamentenliste">
+                        <button type="button" class="add-medikament">+ Medikament</button>
+                        <button type="button" class="apply-medikament">Medikament übernehmen</button>
+                    </div>
+                    <textarea name="mitgabe"></textarea>
+                </div>
+                <div class="baustein" data-field="nachkontrolle">
+                    <label>Nachkontrolle: <button type="button" class="remove-baustein">✖</button></label>
+                    <textarea name="nachkontrolle"></textarea>
+                </div>
+                <div class="baustein" data-field="besonderheiten">
+                    <label>Besonderheiten: <button type="button" class="remove-baustein">✖</button></label>
+                    <textarea name="besonderheiten"></textarea>
+                </div>
+                <button type="submit">Akte generieren</button>
+            </form>
+        </section>
+
+        <!-- Rechte Spalte: Vorschau -->
+        <section class="preview-section">
+            <h2>Vorschau der Akte</h2>
+            <div id="akte-preview">
+                <!-- Hier wird die generierte Akte angezeigt -->
+            </div>
+        </section>
+    </div>
+
+    <script src="preset.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,230 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f9; /* Helles Grau für den Hintergrund */
+  margin: 0;
+  padding: 2rem;
+  color: #333; /* Dunkles Grau für den Text */
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+h1 {
+  text-align: center;
+  color: #1a1f36; /* Sehr dunkles Blau */
+  margin-bottom: 2rem;
+}
+
+.main-container {
+  display: flex;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.config-section {
+  flex: 1; /* Linke Spalte */
+  background-color: #ffffff; /* Weißer Hintergrund */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sanfter Schatten */
+}
+
+.preview-section {
+  flex: 1; /* Rechte Spalte */
+  background-color: #ffffff; /* Weißer Hintergrund */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sanfter Schatten */
+  overflow-y: auto; /* Scrollbar, falls der Inhalt zu groß wird */
+}
+
+.preview-section h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #1a1f36; /* Sehr dunkles Blau */
+}
+
+#baustein-auswahl {
+  margin-bottom: 2rem;
+}
+
+#baustein-auswahl h2 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #4a4f63; /* Mittelgrau */
+}
+
+.baustein-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.baustein-buttons button {
+  background-color: #3a4a6b; /* Dunkler Blauton */
+  color: #ffffff; /* Weißer Text */
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.baustein-buttons button:hover {
+  background-color: #2e3a54; /* Noch dunklerer Blauton */
+  transform: translateY(-2px); /* Leichter Hover-Effekt */
+}
+
+label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #1a1f36; /* Sehr dunkles Blau */
+}
+
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #d1d5db; /* Hellgrauer Rand */
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  background-color: #f9fafb; /* Sehr helles Grau */
+  color: #333; /* Dunkles Grau für den Text */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+select:focus,
+textarea:focus {
+  border-color: #1a73e8; /* Blau beim Fokus */
+  box-shadow: 0 0 4px rgba(26, 115, 232, 0.4); /* Sanfter blauer Schatten */
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  background-color: #1a73e8; /* Blau */
+  color: #ffffff; /* Weißer Text */
+  padding: 1rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #1558b0; /* Dunkleres Blau */
+  transform: translateY(-2px); /* Leichter Hover-Effekt */
+}
+
+.baustein {
+    display: none; /* Standardmäßig ausblenden */
+    margin-bottom: 2rem;
+}
+
+.baustein[data-field="patientName"],
+.baustein[data-field="personal"] {
+    display: block; /* Nur diese Bausteine standardmäßig anzeigen */
+}
+  
+.add-medikament,
+.apply-medikament {
+    background-color: #1a73e8; /* Blau */
+    color: #ffffff; /* Weißer Text */
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem; /* Einheitliche Schriftgröße */
+    width: 100%; /* Gleiche Breite */
+    text-align: center; /* Zentrierter Text */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-medikament:hover,
+.apply-medikament:hover {
+    background-color: #1558b0; /* Dunkleres Blau */
+    transform: translateY(-2px); /* Leichter Hover-Effekt */
+}
+  
+.dropdown-wrapper {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    align-items: center;
+}
+  
+.medikament-dropdown {
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #f9fafb;
+    color: #333;
+}
+  
+.remove-dropdown {
+    background: #dc3545; /* Rot */
+    color: #ffffff; /* Weißer Text */
+    border: none;
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+  
+.remove-dropdown:hover {
+    background: #a71d2a; /* Dunkleres Rot */
+    transform: translateY(-2px); /* Leichter Hover-Effekt */
+}
+  
+.medikamentenliste {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.copy-button {
+    background-color: #1a73e8; /* Blau */
+    color: #ffffff; /* Weißer Text */
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.copy-button:hover {
+    background-color: #1558b0; /* Dunkleres Blau */
+    transform: translateY(-2px); /* Leichter Hover-Effekt */
+}
+
+.remove-baustein {
+    background: transparent;
+    border: none;
+    font-size: 1rem;
+    color: #dc3545; /* Rot für Entfernen */
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.remove-baustein:hover {
+    color: #a71d2a; /* Dunkleres Rot beim Hover */
+}
