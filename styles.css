@@ -13,16 +13,88 @@
 .dark-mode {
     /* Farben für den Darkmode */
     --background-color: #1e1e2f;
-    --text-color: #e4e4e7;
+    --text-color: #e4e4e7; /* Helle Schriftfarbe */
     --card-background: #2a2a3b;
-    --button-background: #3a4a6b;
-    --button-hover: #2e3a54;
-    --border-color: #3e3e4e;
-    --input-background: #2a2a3b;
-    --input-text-color: #e4e4e7;
+    --button-background: #3a4a6b; /* Hintergrundfarbe der Buttons */
+    --button-hover: #2e3a54; /* Hover-Hintergrundfarbe der Buttons */
+    --border-color: #d1d5db; /* Helle Rahmenfarbe */
+    --input-background: #ffffff; /* Heller Hintergrund für Textfelder */
+    --input-text-color: #333; /* Dunkle Schriftfarbe */
     --baustein-background: #2a2a3b; /* Hintergrundfarbe der Bausteine */
     --baustein-border: #3e3e4e; /* Rahmenfarbe der Bausteine */
     --baustein-text: #e4e4e7; /* Textfarbe der Bausteine */
+}
+
+.dark-mode .config-section,
+.dark-mode .preview-section {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode input[type="text"],
+.dark-mode select,
+.dark-mode textarea {
+    background-color: var(--input-background); /* Heller Hintergrund */
+    color: var(--input-text-color); /* Dunkle Schrift */
+    border: 1px solid var(--border-color); /* Helle Rahmenfarbe */
+    border-radius: 8px;
+    padding: 0.75rem;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.dark-mode input[type="text"]:focus,
+.dark-mode select:focus,
+.dark-mode textarea:focus {
+    border-color: #1a73e8; /* Blau beim Fokus */
+    box-shadow: 0 0 4px rgba(26, 115, 232, 0.4); /* Sanfter blauer Schatten */
+    outline: none;
+}
+
+.dark-mode .baustein {
+    background-color: var(--baustein-background); /* Dunkler Hintergrund */
+    border: 1px solid var(--baustein-border); /* Rahmenfarbe */
+    color: var(--baustein-text); /* Helle Schrift */
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode .baustein:hover {
+    background-color: #3a3a4a; /* Etwas hellerer Hintergrund beim Hover */
+    border-color: #4a4a5a; /* Etwas hellerer Rahmen beim Hover */
+}
+
+.dark-mode .baustein-buttons button {
+    background-color: var(--button-background); /* Dunkler Button-Hintergrund */
+    color: var(--text-color); /* Helle Schrift */
+    border: 1px solid var(--border-color); /* Rahmenfarbe */
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+.dark-mode .baustein-buttons button:hover {
+    background-color: var(--button-hover); /* Hellere Button-Hintergrundfarbe beim Hover */
+    border-color: #5a5a6a; /* Etwas hellerer Rahmen beim Hover */
+    transform: translateY(-2px); /* Leichter Hover-Effekt */
+}
+
+.dark-mode label {
+    color: var(--text-color); /* Helle Schriftfarbe */
+    font-weight: 600; /* Optional: Schriftgewicht für bessere Lesbarkeit */
+    transition: color 0.3s ease; /* Sanfter Übergang bei Farbwechsel */
+}
+
+.dark-mode h2 {
+    color: var(--text-color); /* Helle Schriftfarbe */
+    font-weight: 700; /* Optional: Fett für bessere Lesbarkeit */
+    transition: color 0.3s ease; /* Sanfter Übergang bei Farbwechsel */
 }
 
 /* Allgemeine Stile */
@@ -45,15 +117,16 @@ h1 {
 }
 
 .main-container {
-    display: flex;
-    gap: 2rem;
+    display: flex; /* Beide Abschnitte nebeneinander */
+    gap: 2rem; /* Abstand zwischen den Abschnitten */
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .config-section,
 .preview-section {
-    flex: 1;
+    display: block; /* Sicherstellen, dass beide sichtbar sind */
+    flex: 1; /* Gleiche Flex-Basis für beide Abschnitte */
     background-color: var(--card-background);
     padding: 2rem;
     border-radius: 10px;
