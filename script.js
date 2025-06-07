@@ -222,7 +222,7 @@ document.getElementById("akte-form").addEventListener("submit", (e) => {
     preview.appendChild(copyButton);
 });
 
-function addLocationSelectors() {
+function addDiagnoseSelectors() {
     const diagnoseBaustein = document.querySelector('.baustein[data-field="diagnose"]');
     if (!diagnoseBaustein) return;
 
@@ -252,6 +252,12 @@ function addLocationSelectors() {
         <option value="Bauch">Bauch</option>
         <option value="Oberarm">Oberarm</option>
         <option value="Unterarm">Unterarm</option>
+        <option value="Kopf">Kopf</option>
+        <option value="Brust">Brust</option>
+        <option value="Rücken">Rücken</option>
+        <option value="Unterschenkel">Unterschenkel</option>
+        <option value="Hand">Hand</option>
+        <option value="Fuß">Fuß</option>
     `;
 
     // Button zum Anwenden der Auswahl
@@ -266,7 +272,7 @@ function addLocationSelectors() {
         if (side && bodyPart) {
             const textarea = diagnoseBaustein.querySelector("textarea");
             const currentText = textarea.value.trim();
-            const newText = `Steckschuss ${bodyPart} ${side}`; // Diagnose-Text anpassen
+            const newText = `${bodyPart} ${side}`;
             textarea.value = currentText ? `${currentText}, ${newText}` : newText;
         } else {
             alert("Bitte sowohl Seite als auch Körperteil auswählen.");
@@ -283,7 +289,13 @@ function addLocationSelectors() {
     locationWrapper.style.display = "flex";
 }
 
-addLocationSelectors();
+// Diagnose-Selektoren beim Laden initialisieren
+document.addEventListener("DOMContentLoaded", () => {
+    // Warten bis alle anderen DOM-Inhalte geladen sind
+    setTimeout(() => {
+        addDiagnoseSelectors();
+    }, 100);
+});
 
 document.getElementById("clear-all").addEventListener("click", () => {
     // Alle Textfelder leeren
@@ -308,4 +320,3 @@ document.getElementById("clear-all").addEventListener("click", () => {
 document.getElementById("toggle-darkmode").addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
 });
-
