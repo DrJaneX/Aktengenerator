@@ -52,14 +52,21 @@ function createDiagnose(vorlage, teil, seite) {
     return name;
 }
 
-function updateDiagnoseFeld() {
-    const vorlage = document.getElementById("vorlage-select").value;
-    const teil = document.querySelector(".body-part-select")?.value || "";
-    const seite = document.querySelector(".side-select")?.value || "";
-    const diagnose = createDiagnose(vorlage, teil, seite);
-    const feld = document.querySelector('.baustein[data-field="diagnose"] textarea');
-    if (feld) feld.value = feld.value.trim() ? `${feld.value.trim()}\n${diagnose}` : diagnose;
-}
+// ========================
+// Diagnose übernehmen Button
+// ========================
+document.addEventListener("click", (e) => {
+    if (e.target && e.target.classList.contains("apply-location")) {
+        const vorlage = document.getElementById("vorlage-select").value;
+        const teil = document.querySelector(".body-part-select")?.value || "";
+        const seite = document.querySelector(".side-select")?.value || "";
+        const diagnose = createDiagnose(vorlage, teil, seite);
+        const feld = document.querySelector('.baustein[data-field="diagnose"] textarea');
+        if (feld && diagnose) {
+            feld.value = feld.value.trim() ? `${feld.value.trim()}\n${diagnose}` : diagnose;
+        }
+    }
+});
 
 // ========================
 // Vorlagen anwenden
@@ -74,7 +81,6 @@ function applyVorlage(key) {
         const textarea = baustein.querySelector("textarea");
         if (textarea) textarea.value = textarea.value.trim() ? `${textarea.value.trim()}\n${text}` : text;
     });
-    updateDiagnoseFeld();
 }
 
 // ========================
@@ -162,11 +168,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const el = document.querySelector(`.baustein[data-field="${target}"]`);
             if (el) el.style.display = "block";
         });
-    });
-
-    // Seite/Körperteil Dropdown
-    document.querySelectorAll(".body-part-select, .side-select").forEach(select => {
-        select.addEventListener("change", updateDiagnoseFeld);
     });
 
     document.getElementById("clear-all").addEventListener("click", () => {
