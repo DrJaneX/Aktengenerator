@@ -9,117 +9,170 @@
 </head>
 
 <body>
-    <h1>Medic RP Aktengenerator</h1>
+    <div class="darkmode-toggle">
+        <button id="toggle-darkmode">🌙 Darkmode</button>
+    </div>
 
-    <section>
-        <label for="vorlage-select">Vorlage wählen:</label>
-        <select id="vorlage-select">
-            <option value="">-- Keine Vorlage --</option>
-        </select>
-    </section>
+    <h1>🏥 Medic RP Aktengenerator</h1>
 
-    <section id="baustein-auswahl">
-        <h2>Bausteine auswählen</h2>
-    </section>
     <div class="main-container">
         <!-- Linke Spalte: Konfiguration -->
         <section class="config-section">
-            <h2>Konfiguration</h2>
-            <div id="baustein-auswahl">
-                <h2>Bausteine auswählen</h2>
-                <div class="baustein-buttons">
-                    <button type="button" data-target="diagnose">Diagnose ✚</button>
-                    <button type="button" data-target="symptome">Symptome ✚</button>
-                    <button type="button" data-target="massnahme">Maßnahme vor Ort ✚</button>
-                    <button type="button" data-target="untersuchung">Untersuchung im EMT/SSMC ✚</button>
-                    <button type="button" data-target="mitgabe">Mitgegebene Medikamente ✚</button>
-                    <button type="button" data-target="nachkontrolle">Nachkontrolle ✚</button>
-                    <button type="button" data-target="besonderheiten">Besonderheiten ✚</button>
-                </div>
+            <div class="template-section">
+                <h3>📋 Vorlage auswählen</h3>
+                <select id="vorlage-select">
+                    <option value="">-- Keine Vorlage --</option>
+                </select>
             </div>
+
+            <h2>🧩 Bausteine auswählen</h2>
+            <div class="baustein-buttons">
+                <button type="button" data-target="diagnose">🩺 Diagnose</button>
+                <button type="button" data-target="symptome">🤒 Symptome</button>
+                <button type="button" data-target="massnahme">🚑 Maßnahme vor Ort</button>
+                <button type="button" data-target="untersuchung">🏥 Untersuchung EMT/SSMC</button>
+                <button type="button" data-target="mitgabe">💊 Mitgegebene Medikamente</button>
+                <button type="button" data-target="nachkontrolle">📅 Nachkontrolle</button>
+                <button type="button" data-target="besonderheiten">⚠️ Besonderheiten</button>
+            </div>
+
             <form id="akte-form">
-                <div class="baustein" data-field="patientName">
-                    <label>Name des Patienten:</label>
-                    <input type="text" id="patient-name" name="patientName">
+                <!-- Grunddaten (immer sichtbar) -->
+                <div class="baustein visible" data-field="patientName">
+                    <label>👤 Name des Patienten:</label>
+                    <input type="text" id="patient-name" name="patientName" placeholder="Max Mustermann">
                 </div>
-                <div class="baustein" data-field="personal">
-                    <label>Behandelndes Personal: </label>
-                    <input type="text" id="personal" name="personal">
+
+                <div class="baustein visible" data-field="personal">
+                    <label>👨‍⚕️ Behandelndes Personal:</label>
+                    <input type="text" id="personal" name="personal" placeholder="Dr. Schmidt">
                 </div>
+
+                <!-- Diagnose -->
                 <div class="baustein" data-field="diagnose">
-                    <label>Diagnose: <button type="button" class="remove-baustein">✖</button></label>
-                    <textarea id="diagnose" name="diagnose"></textarea>
+                    <label>
+                        🩺 Diagnose:
+                        <button type="button" class="remove-baustein">✖</button>
+                    </label>
+                    <div class="location-controls">
+                        <select class="side-select">
+                            <option value="" disabled selected>-- Seite wählen --</option>
+                            <option value="rechts">Rechts</option>
+                            <option value="links">Links</option>
+                        </select>
+                        <select class="body-part-select">
+                            <option value="" disabled selected>-- Körperteil wählen --</option>
+                            <option value="Kopf">Kopf</option>
+                            <option value="Hals">Hals</option>
+                            <option value="Brust">Brust</option>
+                            <option value="Rücken">Rücken</option>
+                            <option value="Bauch">Bauch</option>
+                            <option value="Oberarm">Oberarm</option>
+                            <option value="Unterarm">Unterarm</option>
+                            <option value="Hand">Hand</option>
+                            <option value="Oberschenkel">Oberschenkel</option>
+                            <option value="Unterschenkel">Unterschenkel</option>
+                            <option value="Fuß">Fuß</option>
+                        </select>
+                        <button type="button" class="apply-location">Übernehmen</button>
+                    </div>
+                    <textarea name="diagnose" placeholder="Beschreibung der Diagnose..."></textarea>
                 </div>
+
+                <!-- Symptome -->
                 <div class="baustein" data-field="symptome">
-                    <label>Symptome: <button type="button" class="remove-baustein">✖</button></label>
-                    <textarea name="symptome"></textarea>
+                    <label>
+                        🤒 Symptome:
+                        <button type="button" class="remove-baustein">✖</button>
+                    </label>
+                    <textarea name="symptome" placeholder="Beschreibung der Symptome..."></textarea>
                 </div>
+
+                <!-- Maßnahme vor Ort -->
                 <div class="baustein" data-field="massnahme">
-                    <label>Maßnahme vor Ort: <button type="button" class="remove-baustein">✖</button></label>
-                    <div class="medikamentenliste">
-                        <button type="button" class="add-medikament">+ Medikament</button>
-                        <button type="button" class="apply-medikament">Medikament übernehmen</button>
+                    <label>
+                        🚑 Maßnahme vor Ort:
+                        <button type="button" class="remove-baustein">✖</button>
+                    </label>
+                    <div class="medikament-section">
+                        <div class="medikament-controls">
+                            <button type="button" class="add-medikament">+ Medikament</button>
+                            <button type="button" class="apply-medikament">Übernehmen</button>
+                        </div>
+                        <div class="medikament-list"></div>
                     </div>
-                    <textarea name="massnahme"></textarea>
+                    <textarea name="massnahme" placeholder="Beschreibung der Maßnahmen..."></textarea>
                 </div>
+
+                <!-- Untersuchung -->
                 <div class="baustein" data-field="untersuchung">
-                    <label>Untersuchung im EMT/SSMC: <button type="button" class="remove-baustein">✖</button></label>
-                    <div class="medikamentenliste">
-                        <button type="button" class="add-medikament">+ Medikament</button>
-                        <button type="button" class="apply-medikament">Medikament übernehmen</button>
+                    <label>
+                        🏥 Untersuchung im EMT/SSMC:
+                        <button type="button" class="remove-baustein">✖</button>
+                    </label>
+                    <div class="medikament-section">
+                        <div class="medikament-controls">
+                            <button type="button" class="add-medikament">+ Medikament</button>
+                            <button type="button" class="apply-medikament">Übernehmen</button>
+                        </div>
+                        <div class="medikament-list"></div>
                     </div>
-                    <textarea name="untersuchung"></textarea>
+                    <textarea name="untersuchung" placeholder="Beschreibung der Untersuchung..."></textarea>
                 </div>
+
+                <!-- Mitgegebene Medikamente -->
                 <div class="baustein" data-field="mitgabe">
-                    <label>Mitgegebene Medikamente: <button type="button" class="remove-baustein">✖</button></label>
-                    <div class="medikamentenliste">
-                        <button type="button" class="add-medikament">+ Medikament</button>
-                        <button type="button" class="apply-medikament">Medikament übernehmen</button>
+                    <label>
+                        💊 Mitgegebene Medikamente:
+                        <button type="button" class="remove-baustein">✖</button>
+                    </label>
+                    <div class="medikament-section">
+                        <div class="medikament-controls">
+                            <button type="button" class="add-medikament">+ Medikament</button>
+                            <button type="button" class="apply-medikament">Übernehmen</button>
+                        </div>
+                        <div class="medikament-list"></div>
                     </div>
-                    <textarea name="mitgabe"></textarea>
+                    <textarea name="mitgabe" placeholder="Beschreibung der mitgegebenen Medikamente..."></textarea>
                 </div>
+
+                <!-- Nachkontrolle -->
                 <div class="baustein" data-field="nachkontrolle">
-                    <label>Nachkontrolle: <button type="button" class="remove-baustein">✖</button></label>
-                    <textarea name="nachkontrolle"></textarea>
+                    <label>
+                        📅 Nachkontrolle:
+                        <button type="button" class="remove-baustein">✖</button>
+                    </label>
+                    <textarea name="nachkontrolle" placeholder="Angaben zur Nachkontrolle..."></textarea>
                 </div>
+
+                <!-- Besonderheiten -->
                 <div class="baustein" data-field="besonderheiten">
-                    <label>Besonderheiten: <button type="button" class="remove-baustein">✖</button></label>
-                    <textarea name="besonderheiten"></textarea>
+                    <label>
+                        ⚠️ Besonderheiten:
+                        <button type="button" class="remove-baustein">✖</button>
+                    </label>
+                    <textarea name="besonderheiten" placeholder="Besondere Hinweise..."></textarea>
                 </div>
-                <div class="location-wrapper">
-                    <select class="side-select">
-                        <option value="" disabled selected>-- Seite wählen --</option>
-                        <option value="rechts">Rechts</option>
-                        <option value="links">Links</option>
-                    </select>
-                    <select class="body-part-select">
-                        <option value="" disabled selected>-- Körperteil wählen --</option>
-                        <option value="Oberschenkel">Oberschenkel</option>
-                        <option value="Bauch">Bauch</option>
-                        <option value="Oberarm">Oberarm</option>
-                        <option value="Unterarm">Unterarm</option>
-                    </select>
-                    <button type="button" class="apply-location">Auswahl übernehmen</button>
+
+                <div class="main-buttons">
+                    <button type="submit" id="generate-akte">📄 Akte generieren</button>
+                    <button type="button" id="clear-all">🗑️ Alles löschen</button>
                 </div>
-                <button type="submit" id="generate-akte">Akte generieren</button>
-                <button type="button" id="clear-all">Alles löschen</button>
             </form>
         </section>
 
         <!-- Rechte Spalte: Vorschau -->
         <section class="preview-section">
-            <h2>Vorschau der Akte</h2>
+            <h2>👁️ Vorschau der Akte</h2>
             <div id="akte-preview">
-                <!-- Hier wird die generierte Akte angezeigt -->
+                <p style="text-align: center; color: #666; font-style: italic;">
+                    Hier wird die generierte Akte angezeigt...
+                </p>
             </div>
         </section>
     </div>
 
-    <div class="darkmode-toggle">
-        <button id="toggle-darkmode">Darkmode umschalten</button>
-    </div>
-
-    <script src="preset.js"></script>
+    <!-- JavaScript Dateien -->
     <script src="script.js"></script>
 </body>
 

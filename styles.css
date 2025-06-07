@@ -1,5 +1,5 @@
+/* CSS Variablen für Farbschemas */
 :root {
-    /* Standardfarben (Hellmodus) */
     --background-color: #f4f6f9;
     --text-color: #333;
     --card-background: #ffffff;
@@ -8,208 +8,127 @@
     --border-color: #d1d5db;
     --input-background: #f9fafb;
     --input-text-color: #333;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --success-color: #28a745;
+    --success-hover: #218838;
+    --danger-color: #dc3545;
+    --danger-hover: #c82333;
+    --info-color: #17a2b8;
+    --info-hover: #138496;
 }
 
+/* Dark Mode Variablen */
 .dark-mode {
-    /* Farben für den Darkmode */
     --background-color: #1e1e2f;
-    --text-color: #e4e4e7; /* Helle Schriftfarbe */
+    --text-color: #e4e4e7;
     --card-background: #2a2a3b;
-    --button-background: #3a4a6b; /* Hintergrundfarbe der Buttons */
-    --button-hover: #2e3a54; /* Hover-Hintergrundfarbe der Buttons */
-    --border-color: #d1d5db; /* Helle Rahmenfarbe */
-    --input-background: #ffffff; /* Heller Hintergrund für Textfelder */
-    --input-text-color: #333; /* Dunkle Schriftfarbe */
-    --baustein-background: #2a2a3b; /* Hintergrundfarbe der Bausteine */
-    --baustein-border: #3e3e4e; /* Rahmenfarbe der Bausteine */
-    --baustein-text: #e4e4e7; /* Textfarbe der Bausteine */
+    --button-background: #3a4a6b;
+    --button-hover: #2e3a54;
+    --border-color: #4a4a5a;
+    --input-background: #ffffff;
+    --input-text-color: #333;
+    --shadow-light: rgba(0, 0, 0, 0.3);
+    --shadow-medium: rgba(0, 0, 0, 0.4);
 }
 
-.dark-mode .config-section,
-.dark-mode .preview-section {
-    background-color: var(--card-background);
-    border: 1px solid var(--border-color);
-    color: var(--text-color);
-    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-}
-
-.dark-mode input[type="text"],
-.dark-mode select,
-.dark-mode textarea {
-    background-color: var(--input-background); /* Heller Hintergrund */
-    color: var(--input-text-color); /* Dunkle Schrift */
-    border: 1px solid var(--border-color); /* Helle Rahmenfarbe */
-    border-radius: 8px;
-    padding: 0.75rem;
-    font-size: 1rem;
+/* Basis Styles */
+* {
     box-sizing: border-box;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-.dark-mode input[type="text"]:focus,
-.dark-mode select:focus,
-.dark-mode textarea:focus {
-    border-color: #1a73e8; /* Blau beim Fokus */
-    box-shadow: 0 0 4px rgba(26, 115, 232, 0.4); /* Sanfter blauer Schatten */
-    outline: none;
-}
-
-.dark-mode .baustein {
-    background-color: var(--baustein-background); /* Dunkler Hintergrund */
-    border: 1px solid var(--baustein-border); /* Rahmenfarbe */
-    color: var(--baustein-text); /* Helle Schrift */
-    border-radius: 8px;
-    padding: 1rem;
-    margin-bottom: 1.5rem;
-    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-}
-
-.dark-mode .baustein:hover {
-    background-color: #3a3a4a; /* Etwas hellerer Hintergrund beim Hover */
-    border-color: #4a4a5a; /* Etwas hellerer Rahmen beim Hover */
-}
-
-.dark-mode .baustein-buttons button {
-    background-color: var(--button-background); /* Dunkler Button-Hintergrund */
-    color: var(--text-color); /* Helle Schrift */
-    border: 1px solid var(--border-color); /* Rahmenfarbe */
-    border-radius: 6px;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
-}
-
-.dark-mode .baustein-buttons button:hover {
-    background-color: var(--button-hover); /* Hellere Button-Hintergrundfarbe beim Hover */
-    border-color: #5a5a6a; /* Etwas hellerer Rahmen beim Hover */
-    transform: translateY(-2px); /* Leichter Hover-Effekt */
-}
-
-.dark-mode label {
-    color: var(--text-color); /* Helle Schriftfarbe */
-    font-weight: 600; /* Optional: Schriftgewicht für bessere Lesbarkeit */
-    transition: color 0.3s ease; /* Sanfter Übergang bei Farbwechsel */
-}
-
-.dark-mode h2 {
-    color: var(--text-color); /* Helle Schriftfarbe */
-    font-weight: 700; /* Optional: Fett für bessere Lesbarkeit */
-    transition: color 0.3s ease; /* Sanfter Übergang bei Farbwechsel */
-}
-
-/* Allgemeine Stile */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--background-color);
     margin: 0;
     padding: 2rem;
     color: var(--text-color);
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    line-height: 1.6;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Überschriften */
 h1 {
     text-align: center;
-    color: #1a1f36; /* Sehr dunkles Blau */
     margin-bottom: 2rem;
+    color: var(--text-color);
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px var(--shadow-light);
 }
 
+h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    border-bottom: 2px solid var(--button-background);
+    padding-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Layout Container */
 .main-container {
-    display: flex; /* Beide Abschnitte nebeneinander */
-    gap: 2rem; /* Abstand zwischen den Abschnitten */
-    max-width: 1200px;
+    display: flex;
+    gap: 2rem;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
+/* Haupt-Sektionen */
 .config-section,
 .preview-section {
-    display: block; /* Sicherstellen, dass beide sichtbar sind */
-    flex: 1; /* Gleiche Flex-Basis für beide Abschnitte */
+    flex: 1;
     background-color: var(--card-background);
     padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sanfter Schatten */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px var(--shadow-light);
     border: 1px solid var(--border-color);
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .preview-section {
-    overflow-y: auto; /* Scrollbar, falls der Inhalt zu groß wird */
-    background-color: var(--card-background);
-    border: 1px solid var(--border-color);
-    color: var(--text-color);
-    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    overflow-y: auto;
+    max-height: 80vh;
 }
 
-.preview-section h2 {
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-    color: #1a1f36; /* Sehr dunkles Blau */
-}
-
-#baustein-auswahl {
+/* Template Sektion */
+.template-section {
     margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
 
-#baustein-auswahl h2 {
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-    color: #4a4f63; /* Mittelgrau */
-}
-
-.baustein-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.baustein-buttons button {
-    background-color: var(--button-background);
-    color: #ffffff;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.baustein-buttons button:hover {
-    background-color: var(--button-hover);
-    transform: translateY(-2px);
-}
-
-label {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    color: #1a1f36; /* Sehr dunkles Blau */
-}
-
+/* Form Elemente */
 input[type="text"],
 select,
 textarea {
     width: 100%;
     padding: 0.75rem;
-    margin-bottom: 1.5rem;
-    background-color: var(--input-background);
-    color: var(--input-text-color);
     border: 1px solid var(--border-color);
     border-radius: 8px;
     font-size: 1rem;
-    box-sizing: border-box;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    background-color: var(--input-background);
+    color: var(--input-text-color);
+    transition: all 0.3s ease;
+    font-family: inherit;
 }
 
 input[type="text"]:focus,
 select:focus,
 textarea:focus {
-    border-color: #1a73e8; /* Blau beim Fokus */
-    box-shadow: 0 0 4px rgba(26, 115, 232, 0.4); /* Sanfter blauer Schatten */
+    border-color: var(--button-background);
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
     outline: none;
+    transform: translateY(-1px);
 }
 
 textarea {
@@ -217,178 +136,411 @@ textarea {
     min-height: 100px;
 }
 
-button[type="submit"] {
-    display: block;
-    width: 100%;
-    background-color: var(--button-background);
-    color: #ffffff;
-    padding: 1rem;
-    font-size: 1.1rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-button[type="submit"]:hover {
-    background-color: var(--button-hover);
-    transform: translateY(-2px);
-}
-
-.baustein {
-    display: none; /* Standardmäßig ausblenden */
-    margin-bottom: 2rem;
-    background-color: var(--baustein-background); /* Hintergrundfarbe */
-    border: 1px solid var(--baustein-border); /* Rahmenfarbe */
-    border-radius: 8px;
-    padding: 1rem;
-    color: var(--baustein-text); /* Textfarbe */
-    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-}
-
-.baustein[data-field="patientName"],
-.baustein[data-field="personal"] {
-    display: block; /* Nur diese Bausteine standardmäßig anzeigen */
-}
-  
-.add-medikament,
-.apply-medikament {
-    background-color: var(--button-background);
-    color: #ffffff;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1rem; /* Einheitliche Schriftgröße */
-    width: 100%; /* Gleiche Breite */
-    text-align: center; /* Zentrierter Text */
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.add-medikament:hover,
-.apply-medikament:hover {
-    background-color: var(--button-hover);
-    transform: translateY(-2px);
-}
-  
-.dropdown-wrapper {
+/* Labels */
+label {
     display: flex;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
+    justify-content: space-between;
     align-items: center;
-}
-  
-.medikament-dropdown {
-    padding: 0.5rem;
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    color: var(--text-color);
     font-size: 1rem;
-    background-color: var(--input-background);
-    color: var(--input-text-color);
 }
-  
-.remove-dropdown {
-    background: #dc3545; /* Rot */
-    color: #ffffff; /* Weißer Text */
+
+/* Baustein Buttons */
+.baustein-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.baustein-buttons button {
+    background: linear-gradient(135deg, var(--button-background), var(--button-hover));
+    color: white;
     border: none;
-    padding: 0.4rem 0.6rem;
-    border-radius: 4px;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(26, 115, 232, 0.2);
 }
-  
-.remove-dropdown:hover {
-    background: #a71d2a; /* Dunkleres Rot */
+
+.baustein-buttons button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(26, 115, 232, 0.3);
+}
+
+.baustein-buttons button:active {
+    transform: translateY(0);
+}
+
+/* Bausteine */
+.baustein {
+    display: none;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    background-color: var(--card-background);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.baustein.visible {
+    display: block;
+    animation: slideIn 0.3s ease-out;
+}
+
+.baustein:hover {
+    border-color: var(--button-background);
+    box-shadow: 0 4px 15px rgba(26, 115, 232, 0.1);
     transform: translateY(-2px);
 }
-  
-.medikamentenliste {
+
+/* Slide-in Animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Medikament Sektion */
+.medikament-section {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: rgba(26, 115, 232, 0.05);
+    border-radius: 8px;
+    border: 1px dashed var(--button-background);
+}
+
+.medikament-controls {
     display: flex;
-    flex-direction: column;
     gap: 0.5rem;
     margin-bottom: 1rem;
 }
 
-.copy-button {
-    background-color: var(--button-background);
-    color: #ffffff;
+.medikament-controls button {
+    background: var(--button-background);
+    color: white;
     border: none;
-    padding: 0.75rem 1.5rem;
+    padding: 0.5rem 1rem;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 1rem;
-    margin-top: 1rem;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
 }
 
-.copy-button:hover {
-    background-color: var(--button-hover);
-    transform: translateY(-2px);
+.medikament-controls button:hover {
+    background: var(--button-hover);
+    transform: translateY(-1px);
+}
+
+.medikament-item {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    align-items: center;
+    animation: slideIn 0.3s ease-out;
+}
+
+.medikament-item select {
+    flex: 1;
+    padding: 0.5rem;
+    margin-bottom: 0;
+}
+
+/* Location Controls */
+.location-controls {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    align-items: center;
+}
+
+.location-controls select {
+    flex: 1;
+    padding: 0.5rem;
+    margin-bottom: 0;
+}
+
+.location-controls button {
+    background: var(--button-background);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.location-controls button:hover {
+    background: var(--button-hover);
+    transform: translateY(-1px);
+}
+
+/* Remove Buttons */
+.remove-baustein,
+.remove-btn {
+    background: var(--danger-color);
+    color: white;
+    border: none;
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    min-width: 30px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.remove-baustein:hover,
+.remove-btn:hover {
+    background: var(--danger-hover);
+    transform: scale(1.05);
 }
 
 .remove-baustein {
     background: transparent;
-    border: none;
+    color: var(--danger-color);
+    padding: 0.2rem 0.4rem;
     font-size: 1rem;
-    color: #dc3545; /* Rot für Entfernen */
-    cursor: pointer;
-    transition: color 0.2s ease;
 }
 
 .remove-baustein:hover {
-    color: #a71d2a; /* Dunkleres Rot beim Hover */
+    background: var(--danger-color);
+    color: white;
 }
 
-.location-wrapper {
-    display: none; /* Standardmäßig ausblenden */
-    margin-top: 1rem;
+/* Haupt-Buttons */
+.main-buttons {
+    display: flex;
     gap: 1rem;
-    align-items: center;
+    margin-top: 2rem;
 }
 
-.side-select,
-.body-part-select {
-    padding: 0.5rem;
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    font-size: 1rem;
-    background-color: var(--input-background);
-    color: var(--input-text-color);
-}
-
-.apply-location {
-    background-color: var(--button-background);
-    color: #ffffff;
+.main-buttons button {
+    flex: 1;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
     border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 1rem; /* Einheitliche Schriftgröße */
-    width: 100%; /* Gleiche Breite */
-    text-align: center; /* Zentrierter Text */
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: all 0.3s ease;
 }
 
-.apply-location:hover {
-    background-color: var(--button-hover);
+#generate-akte {
+    background: linear-gradient(135deg, var(--success-color), #20c997);
+    color: white;
+}
+
+#generate-akte:hover {
     transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
 }
 
 #clear-all {
-    background-color: #dc3545; /* Rot */
-    color: #ffffff; /* Weißer Text */
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1rem;
-    margin-top: 1rem; /* Abstand zum "Akte generieren"-Button */
-    display: block; /* Block-Layout für vertikale Platzierung */
-    width: 100%; /* Gleiche Breite wie "Akte generieren" */
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    background: linear-gradient(135deg, var(--danger-color), #e83e8c);
+    color: white;
 }
 
 #clear-all:hover {
-    background-color: #a71d2a; /* Dunkleres Rot */
     transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+}
+
+/* Preview Styles */
+.preview-item {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgba(26, 115, 232, 0.05);
+    border-radius: 8px;
+    border-left: 4px solid var(--button-background);
+    transition: all 0.3s ease;
+}
+
+.preview-item:hover {
+    background: rgba(26, 115, 232, 0.1);
+    transform: translateX(5px);
+}
+
+.preview-item strong {
+    color: var(--button-background);
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.copy-button {
+    background: linear-gradient(135deg, var(--info-color), #6f42c1);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.copy-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(23, 162, 184, 0.3);
+}
+
+/* Dark Mode Toggle */
+.darkmode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#toggle-darkmode {
+    background: var(--button-background);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px var(--shadow-light);
+}
+
+#toggle-darkmode:hover {
+    background: var(--button-hover);
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .main-container {
+        gap: 1.5rem;
+    }
+    
+    .config-section,
+    .preview-section {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .main-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .baustein-buttons {
+        grid-template-columns: 1fr;
+    }
+    
+    .main-buttons {
+        flex-direction: column;
+    }
+    
+    .medikament-controls {
+        flex-direction: column;
+    }
+    
+    .location-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .location-controls button {
+        margin-top: 0.5rem;
+    }
+    
+    .darkmode-toggle {
+        position: static;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .config-section,
+    .preview-section {
+        padding: 1rem;
+    }
+    
+    .template-section {
+        padding: 1rem;
+    }
+    
+    .baustein {
+        padding: 1rem;
+    }
+    
+    .medikament-item {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .medikament-item select {
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus Styles für Accessibility */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid var(--button-background);
+    outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+    .darkmode-toggle,
+    .baustein-buttons,
+    .main-buttons,
+    .medikament-controls,
+    .location-controls,
+    .remove-baustein,
+    .remove-btn {
+        display: none !important;
+    }
+    
+    .main-container {
+        flex-direction: column;
+    }
+    
+    .config-section,
+    .preview-section {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
 }
