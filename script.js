@@ -58,7 +58,7 @@ function updateDiagnoseFeld() {
     const seite = document.querySelector(".side-select")?.value || "";
     const diagnose = createDiagnose(vorlage, teil, seite);
     const feld = document.querySelector('.baustein[data-field="diagnose"] textarea');
-    if (feld) feld.value = diagnose;
+    if (feld) feld.value = feld.value.trim() ? `${feld.value.trim()}\n${diagnose}` : diagnose;
 }
 
 // ========================
@@ -72,7 +72,7 @@ function applyVorlage(key) {
         if (!baustein) return;
         baustein.style.display = "block";
         const textarea = baustein.querySelector("textarea");
-        if (textarea) textarea.value = text;
+        if (textarea) textarea.value = textarea.value.trim() ? `${textarea.value.trim()}\n${text}` : text;
     });
     updateDiagnoseFeld();
 }
@@ -119,7 +119,7 @@ function applyMedikamente(parent) {
         : `${selected.slice(0, -1).join(", ")} und ${selected.slice(-1)} wurden verabreicht`;
 
     textarea.value = textarea.value.trim()
-        ? `${textarea.value.trim()}, ${text}`
+        ? `${textarea.value.trim()}\n${text}`
         : text;
 
     parent.querySelectorAll(".dropdown-wrapper").forEach(e => e.remove());
