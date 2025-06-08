@@ -4,34 +4,34 @@
 // ========================
 const vorlagen = {
     steckschuss: {
-        symptome: "Starke Blutung, Schmerzen, Schockzustand",
-        massnahme: "Blutstillung durch Druckverband, Schmerzmittel verabreicht",
-        untersuchung: "Röntgenaufnahme durchgeführt, Kugel lokalisiert",
-        mitgabe: "Schmerzmittel (Ibuprofen 400mg), Antibiotikum",
+        symptome: "Starke Blutung\nSchmerzen\nSchockzustand",
+        massnahme: "Blutstillung durch Druckverband\nSchmerzmittel verabreicht",
+        untersuchung: "Röntgenaufnahme durchgeführt\nKugel lokalisiert",
+        mitgabe: "Schmerzmittel (Ibuprofen 400mg)\nAntibiotikum",
         nachkontrolle: "Nachkontrolle in 7 Tagen empfohlen",
         besonderheiten: "Patient ist allergisch gegen Penicillin"
     },
     durchschuss: {
-        symptome: "Starke Blutung, Schmerzen, Schockzustand",
-        massnahme: "Blutstillung durch Druckverband, Schmerzmittel verabreicht",
-        untersuchung: "Röntgenaufnahme durchgeführt, Kugel lokalisiert",
-        mitgabe: "Schmerzmittel (Ibuprofen 400mg), Antibiotikum",
+        symptome: "Starke Blutung\nSchmerzen\nSchockzustand",
+        massnahme: "Blutstillung durch Druckverband\nSchmerzmittel verabreicht",
+        untersuchung: "Röntgenaufnahme durchgeführt\nKugel lokalisiert",
+        mitgabe: "Schmerzmittel (Ibuprofen 400mg)\nAntibiotikum",
         nachkontrolle: "Nachkontrolle in 7 Tagen empfohlen",
         besonderheiten: "Patient ist allergisch gegen Penicillin"
     },
     verstauchung: {
-        symptome: "Schwellung, Schmerzen, eingeschränkte Beweglichkeit",
-        massnahme: "Kühlung, Ruhigstellung mit Verband",
-        untersuchung: "Röntgenaufnahme durchgeführt, keine Fraktur festgestellt",
-        mitgabe: "Schmerzgel (Diclofenac), elastischer Verband",
+        symptome: "Schwellung\nSchmerzen\neingeschränkte Beweglichkeit",
+        massnahme: "Kühlung\nRuhigstellung mit Verband",
+        untersuchung: "Röntgenaufnahme durchgeführt\nkeine Fraktur festgestellt",
+        mitgabe: "Schmerzgel (Diclofenac)\nelastischer Verband",
         nachkontrolle: "Nachkontrolle in 3 Tagen empfohlen",
         besonderheiten: "Keine Allergien bekannt"
     },
     fraktur: {
-        symptome: "Starke Schmerzen, Schwellung, Bewegungseinschränkung",
-        massnahme: "Ruhigstellung, Schmerztherapie",
-        untersuchung: "Röntgenaufnahme durchgeführt, Fraktur bestätigt",
-        mitgabe: "Schmerzmittel (Ibuprofen 600mg), Krücken",
+        symptome: "Starke Schmerzen\nSchwellung\nBewegungseinschränkung",
+        massnahme: "Ruhigstellung\nSchmerztherapie",
+        untersuchung: "Röntgenaufnahme durchgeführt\nFraktur bestätigt",
+        mitgabe: "Schmerzmittel (Ibuprofen 600mg)\nKrücken",
         nachkontrolle: "Nachkontrolle in 5 Tagen empfohlen",
         besonderheiten: "Keine Allergien bekannt"
     }
