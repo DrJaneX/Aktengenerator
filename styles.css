@@ -211,7 +211,7 @@ label {
     }
 }
 
-/* Medikament Sektion */
+/* Medikament Sektion - Erweitert für untereinander Anzeige */
 .medikament-section {
     margin: 1rem 0;
     padding: 1rem;
@@ -243,18 +243,99 @@ label {
     transform: translateY(-1px);
 }
 
+/* Medikament Items - Jetzt vertikal gestapelt */
+.medikament-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
 .medikament-item {
     display: flex;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
+    gap: 0.75rem;
     align-items: center;
+    padding: 0.75rem;
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
     animation: slideIn 0.3s ease-out;
+    transition: all 0.3s ease;
+}
+
+.medikament-item:hover {
+    border-color: var(--button-background);
+    box-shadow: 0 2px 8px rgba(26, 115, 232, 0.1);
+    transform: translateY(-1px);
 }
 
 .medikament-item select {
     flex: 1;
     padding: 0.5rem;
     margin-bottom: 0;
+    min-width: 200px;
+}
+
+.medikament-item .remove-btn {
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+/* Ausgewählte Medikamente Anzeige */
+.selected-medikamente {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(40, 167, 69, 0.05);
+    border-radius: 8px;
+    border: 1px solid var(--success-color);
+}
+
+.selected-medikamente h4 {
+    margin: 0 0 0.75rem 0;
+    color: var(--success-color);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.selected-medikament-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.5rem;
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.selected-medikament-item:hover {
+    border-color: var(--success-color);
+    transform: translateX(5px);
+}
+
+.selected-medikament-item:last-child {
+    margin-bottom: 0;
+}
+
+.medikament-name {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.medikament-remove {
+    background: var(--danger-color);
+    color: white;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.medikament-remove:hover {
+    background: var(--danger-hover);
+    transform: scale(1.05);
 }
 
 /* Location Controls */

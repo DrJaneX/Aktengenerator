@@ -1,3 +1,4 @@
+
 // ========================
 // Vorlagen-Definition
 // ========================
@@ -99,16 +100,26 @@ function createDropdown() {
 function addMedikamentenFeld(parent) {
     const wrapper = document.createElement("div");
     wrapper.classList.add("dropdown-wrapper");
+    wrapper.style.display = "block";
+    wrapper.style.marginTop = "0.5rem";
 
     const dropdown = createDropdown();
+    dropdown.style.width = "100%";
+    dropdown.style.marginBottom = "0.5rem";
+
     const removeBtn = document.createElement("button");
     removeBtn.type = "button";
     removeBtn.textContent = "✖";
     removeBtn.classList.add("remove-dropdown");
     removeBtn.onclick = () => wrapper.remove();
+    removeBtn.style.display = "block";
+    removeBtn.style.marginTop = "0.25rem";
 
-    wrapper.append(dropdown, removeBtn);
-    parent.insertBefore(wrapper, parent.querySelector(".add-medikament"));
+    wrapper.appendChild(dropdown);
+    wrapper.appendChild(removeBtn);
+
+    const list = parent.querySelector(".medikament-list");
+    if (list) list.appendChild(wrapper);
 }
 
 function applyMedikamente(parent) {
@@ -149,11 +160,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.querySelectorAll(".add-medikament").forEach(btn => {
-        btn.addEventListener("click", () => addMedikamentenFeld(btn.parentElement));
+        btn.addEventListener("click", () => addMedikamentenFeld(btn.closest(".medikament-section")));
     });
 
     document.querySelectorAll(".apply-medikament").forEach(btn => {
-        btn.addEventListener("click", () => applyMedikamente(btn.parentElement));
+        btn.addEventListener("click", () => applyMedikamente(btn.closest(".medikament-section")));
     });
 
     document.querySelectorAll(".remove-baustein").forEach(btn => {
@@ -197,7 +208,8 @@ document.addEventListener("DOMContentLoaded", () => {
             preview.append(block, document.createElement("br"), document.createElement("br"));
             content += `${label}:
 ${value}
-\n`;
+
+`;
         });
 
         const copyBtn = document.createElement("button");
