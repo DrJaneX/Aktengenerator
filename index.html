@@ -43,11 +43,6 @@
                     <input type="text" id="patient-name" name="patientName" placeholder="Max Mustermann">
                 </div>
 
-                <div class="baustein visible" data-field="personal">
-                    <label>👨‍⚕️ Behandelndes Personal:</label>
-                    <input type="text" id="personal" name="personal" placeholder="Dr. Schmidt">
-                </div>
-
                 <!-- Diagnose -->
                 <div class="baustein" data-field="diagnose">
                     <label>
@@ -152,6 +147,12 @@
                         <button type="button" class="remove-baustein">✖</button>
                     </label>
                     <textarea name="besonderheiten" placeholder="Besondere Hinweise..."></textarea>
+                </div>
+
+                <!-- Behandelndes Personal (immer sichtbar) -->
+                <div class="baustein visible" data-field="personal">
+                    <label>👨‍⚕️ Behandelndes Personal:</label>
+                    <input type="text" id="personal" name="personal" placeholder="Dr. Schmidt">
                 </div>
 
                 <div class="main-buttons">
