@@ -14,24 +14,21 @@ const vorlagen = {
         massnahme: "Blutstillung durch Druckverband\nSchmerzmittel verabreicht",
         untersuchung: "Röntgenaufnahme durchgeführt\nKugel lokalisiert",
         mitgabe: "Schmerzmittel (Ibuprofen 400mg)\nAntibiotikum",
-        nachkontrolle: "Nachkontrolle in 7 Tagen empfohlen",
-        besonderheiten: "Patient ist allergisch gegen Penicillin"
+        nachkontrolle: "XX.XX.XXXX\nFäden ziehen & Wundkontrolle"
     },
     verstauchung: {
         symptome: "Schwellung\nSchmerzen\neingeschränkte Beweglichkeit",
         massnahme: "Kühlung\nRuhigstellung mit Verband",
         untersuchung: "Röntgenaufnahme durchgeführt\nkeine Fraktur festgestellt",
         mitgabe: "Schmerzgel (Diclofenac)\nelastischer Verband",
-        nachkontrolle: "Nachkontrolle in 3 Tagen empfohlen",
-        besonderheiten: "Keine Allergien bekannt"
+        nachkontrolle: "XX.XX.XXXX\nFäden ziehen & Wundkontrolle"
     },
     fraktur: {
         symptome: "Starke Schmerzen\nSchwellung\nBewegungseinschränkung",
         massnahme: "Ruhigstellung\nSchmerztherapie",
         untersuchung: "Röntgenaufnahme durchgeführt\nFraktur bestätigt",
         mitgabe: "Schmerzmittel (Ibuprofen 600mg)\nKrücken",
-        nachkontrolle: "Nachkontrolle in 5 Tagen empfohlen",
-        besonderheiten: "Keine Allergien bekannt"
+        nachkontrolle: "XX.XX.XXXX\nFäden ziehen & Wundkontrolle"
     }
 };
 
