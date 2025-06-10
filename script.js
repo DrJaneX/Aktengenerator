@@ -5,11 +5,9 @@
 const vorlagen = {
     steckschuss: {
         symptome: "Starke Blutung\nSchmerzen\nSchockzustand",
-        massnahme: "Blutstillung durch Druckverband\nSchmerzmittel verabreicht",
-        untersuchung: "Röntgenaufnahme durchgeführt\nKugel lokalisiert",
-        mitgabe: "Schmerzmittel (Ibuprofen 400mg)\nAntibiotikum",
-        nachkontrolle: "Nachkontrolle in 7 Tagen empfohlen",
-        besonderheiten: "Patient ist allergisch gegen Penicillin"
+        massnahme: "Blutstillung durch Druckverband/Stopfverband",
+        untersuchung: "Fast-Sono durchgeführt: Kugel lokalisiert",
+        nachkontrolle: "XX.XX.XXXX\nFäden ziehen & Wundkontrolle"
     },
     durchschuss: {
         symptome: "Starke Blutung\nSchmerzen\nSchockzustand",
