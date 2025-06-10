@@ -38,8 +38,8 @@ const vorlagen = {
 };
 
 const medikamente = [
-    "Paracetamol", "Ibuprofen", "Salbutamol", "Adrenalin",
-    "Morphin", "Ringer-Lösung", "Glucose", "Ketamin"
+    "Paracetamol (Schmerzmittel)", "Ibuprofen (Schmerzmittel)", "Ringerlösung", "Adrenalin",
+    "Morphin (BTM - starkes Schmerzmittel)", "Novalgin", "Glucose", "Ketamin"
 ];
 
 // ========================
