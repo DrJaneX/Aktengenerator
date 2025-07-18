@@ -63,7 +63,8 @@ const vorlagen = {
 
 const medikamente = [
     "Paracetamol (Schmerzmittel)", "Ibuprofen (Schmerzmittel)", "Ringerlösung", "Adrenalin",
-    "Morphin (BTM - starkes Schmerzmittel)", "Novalgin", "Glucose", "Ketamin"
+    "Morphin (BTM - starkes Schmerzmittel)", "Novalgin", "Glucose", "Ketamin", "Voltaren", "Arnika-Salbe",
+    "Lidocain (örtliche Betäubung)", "Diclofenac (Schmerzgel)", "Antibiotikum", "Wärmepflaster", "CBD Öl", "Aspirin", "Baldrian (Tablette, Tropfen, Saft)", "Dipidolor",
 ];
 
 // ========================
