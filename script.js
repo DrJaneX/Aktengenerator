@@ -6,27 +6,56 @@ const vorlagen = {
     steckschuss: {
         symptome: "Starke Blutung\nSchmerzen\nSchockzustand",
         massnahme: "Blutstillung durch Druckverband/Stopfverband",
-        untersuchung: "Fast-Sono durchgeführt: Kugel lokalisiert",
+        untersuchung: "Fast-Sono durchgeführt: Kugel lokalisiert\nLidocain (örtliche Betäubung) verabreicht\nWunde gereinigt und desinfiziert\nProjektil entfernt\nWunde ausgespült\nWunde mit XX Stichen (non-reso) vernäht\nWunde verbunden",
+        mitgabe: "Schmerzmittel (Ibuprofen 800mg)\nAntibiotikum",
         nachkontrolle: "XX.XX.XXXX\nFäden ziehen & Wundkontrolle"
     },
     durchschuss: {
         symptome: "Starke Blutung\nSchmerzen\nSchockzustand",
+        massnahme: "Blutstillung durch Druckverband/Stopfverband\nSchmerzmittel verabreicht",
+        untersuchung: "Lidocain verabreicht\nWunde ausgespült\nEin- und Austrittswunde mit XX Stichen vernäht\nWunde verbunden",
+        mitgabe: "Schmerzmittel (Ibuprofen 800mg)\nAntibiotikum",
+        nachkontrolle: "XX.XX.XXXX\nFäden ziehen & Wundkontrolle"
+    },
+    streifschuss: {
+        symptome: "Starke Blutung\nSchmerzen\nSchockzustand",
         massnahme: "Blutstillung durch Druckverband\nSchmerzmittel verabreicht",
-        untersuchung: "Röntgenaufnahme durchgeführt\nKugel lokalisiert",
-        mitgabe: "Schmerzmittel (Ibuprofen 400mg)\nAntibiotikum",
+        untersuchung: "Lidocain verabreicht\nWunde ausgespült\nWunde mit XX Stichen vernäht\nWunde verbunden",
+        mitgabe: "Schmerzmittel (Ibuprofen 800mg)\nAntibiotikum",
+        nachkontrolle: "XX.XX.XXXX\nFäden ziehen & Wundkontrolle"
+    },
+    stichwunde: {
+        symptome: "Starke Blutung\nSchmerzen\nSchockzustand",
+        massnahme: "Blutstillung durch Druckverband/Stopfverband\nSchmerzmittel verabreicht",
+        untersuchung: "Fast-Sono\nErgebnis:\nLidocain verabreicht\nWunde ausgespült\nWunde mit XX Stichen vernäht\nWunde verbunden",
+        mitgabe: "Schmerzmittel (Ibuprofen 600mg)\nAntibiotikum",
+        nachkontrolle: "XX.XX.XXXX\nFäden ziehen & Wundkontrolle"
+    },
+    schnittverletzung: {
+        symptome: "Starke Blutung\nSchmerzen\nSchockzustand",
+        massnahme: "Blutstillung durch Druckverband/Stopfverband\nSchmerzmittel verabreicht",
+        untersuchung: "Fast-Sono\nErgebnis:\nLidocain verabreicht\nWunde ausgespült\nWunde mit XX Stichen vernäht\nWunde verbunden",
+        mitgabe: "Schmerzmittel (Ibuprofen 600mg)\nAntibiotikum",
         nachkontrolle: "XX.XX.XXXX\nFäden ziehen & Wundkontrolle"
     },
     verstauchung: {
         symptome: "Schwellung\nSchmerzen\neingeschränkte Beweglichkeit",
         massnahme: "Kühlung\nRuhigstellung mit Verband",
-        untersuchung: "Röntgenaufnahme durchgeführt\nkeine Fraktur festgestellt",
+        untersuchung: "Röntgen/CT/MRT durchgeführt, Ergebnis:\nkeine Fraktur festgestellt\nWunde verbunden",
         mitgabe: "Schmerzgel (Diclofenac)\nelastischer Verband",
-        nachkontrolle: "XX.XX.XXXX\nFäden ziehen & Wundkontrolle"
+        nachkontrolle: "XX.XX.XXXX\nFäden ziehen,Wundkontrolle & erneutes Röntgen/CT/MRT"
+    },
+    haarriss: {
+        symptome: "Schwellung\nSchmerzen\neingeschränkte Beweglichkeit",
+        massnahme: "Kühlung\nRuhigstellung mit Verband",
+        untersuchung: "Röntgen/CT/MRT durchgeführt, Ergebnis:\nHaarriss festgestellt\nWunde verbunden",
+        mitgabe: "Schmerzgel (Diclofenac)\nelastischer Verband",
+        nachkontrolle: "XX.XX.XXXX\nFäden ziehen,Wundkontrolle & erneutes Röntgen/CT/MRT"
     },
     fraktur: {
         symptome: "Starke Schmerzen\nSchwellung\nBewegungseinschränkung",
         massnahme: "Ruhigstellung\nSchmerztherapie",
-        untersuchung: "Röntgenaufnahme durchgeführt\nFraktur bestätigt",
+        untersuchung: "Röntgen/CT/MRT durchgeführt, Ergebnis:\n Fraktur festgestellt\nVerband/Gips angelegt",
         mitgabe: "Schmerzmittel (Ibuprofen 600mg)\nKrücken",
         nachkontrolle: "XX.XX.XXXX\nFäden ziehen & Wundkontrolle"
     }
